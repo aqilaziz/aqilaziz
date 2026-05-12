@@ -50,10 +50,7 @@ Recently active around:
 
 ## GitHub activity
 
-<p>
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=aqilaziz&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github" alt="Aqil Aziz GitHub stats" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=aqilaziz&layout=compact&theme=tokyonight&hide_border=true" alt="Aqil Aziz top languages" />
-</p>
+<img src="assets/github-activity.svg" alt="Aqil Aziz GitHub activity summary" width="100%" />
 
 ## Connect
 
