@@ -1,0 +1,118 @@
+const fs = require("node:fs");
+const path = require("node:path");
+
+const username = process.env.PROFILE_USERNAME || "aqilaziz";
+const token = process.env.GITHUB_TOKEN || "";
+const outputPath = path.resolve(__dirname, "..", "assets", "open-source-metrics.svg");
+
+function escapeXml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+async function searchCount(query) {
+  const url = new URL("https://api.github.com/search/issues");
+  url.searchParams.set("q", query);
+  url.searchParams.set("per_page", "1");
+
+  const headers = {
+    Accept: "application/vnd.github+json",
+    "User-Agent": `${username}-profile-metrics`,
+    "X-GitHub-Api-Version": "2022-11-28",
+  };
+
+  if (token) {
+    headers.Authorization = `Bearer ${token}`;
+  }
+
+  const response = await fetch(url, { headers });
+
+  if (!response.ok) {
+    const body = await response.text();
+    throw new Error(`GitHub API failed for "${query}": ${response.status} ${body}`);
+  }
+
+  const data = await response.json();
+  return Number(data.total_count || 0);
+}
+
+function formatJakartaDate(date = new Date()) {
+  return new Intl.DateTimeFormat("en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+    timeZone: "Asia/Jakarta",
+  }).format(date);
+}
+
+function renderSvg(metrics) {
+  const closedTotal = Math.max(metrics.totalPrs - metrics.openPrs, 0);
+  const closedNotMerged = Math.max(closedTotal - metrics.mergedPrs, 0);
+  const mergeRate = closedTotal > 0 ? Math.round((metrics.mergedPrs / closedTotal) * 100) : 0;
+  const updatedAt = formatJakartaDate();
+
+  return `<svg width="900" height="250" viewBox="0 0 900 250" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Aqil Aziz open source pull request metrics</title>
+  <desc id="desc">Public GitHub pull request metrics for Aqil Aziz showing merged, total, open, and closed pull requests.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="900" y2="250" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0D1117"/>
+      <stop offset="0.55" stop-color="#111827"/>
+      <stop offset="1" stop-color="#0F2E2E"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#E5E7EB" stroke-opacity="0.06" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="900" height="250" rx="18" fill="url(#bg)"/>
+  <rect width="900" height="250" rx="18" fill="url(#grid)"/>
+  <rect x="24" y="22" width="852" height="206" rx="16" fill="#010409" fill-opacity="0.48" stroke="#30363D"/>
+
+  <text x="48" y="58" fill="#F0F6FC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="24" font-weight="800">Open Source Pull Request Snapshot</text>
+  <text x="48" y="84" fill="#8B949E" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14">Public GitHub search snapshot for author:${escapeXml(username)}, auto-updated ${escapeXml(updatedAt)}</text>
+
+  <g font-family="Inter, Segoe UI, Arial, sans-serif">
+    <rect x="48" y="110" width="185" height="86" rx="12" fill="#0F2A1B" stroke="#3FB950" stroke-opacity="0.72"/>
+    <text x="68" y="138" fill="#7EE787" font-size="13" font-weight="800">MERGED PRS</text>
+    <text x="68" y="176" fill="#F0F6FC" font-size="38" font-weight="900">${metrics.mergedPrs}</text>
+
+    <rect x="254" y="110" width="185" height="86" rx="12" fill="#0A1F36" stroke="#58A6FF" stroke-opacity="0.72"/>
+    <text x="274" y="138" fill="#79C0FF" font-size="13" font-weight="800">TOTAL PRS</text>
+    <text x="274" y="176" fill="#F0F6FC" font-size="38" font-weight="900">${metrics.totalPrs}</text>
+
+    <rect x="460" y="110" width="185" height="86" rx="12" fill="#2B2111" stroke="#D29922" stroke-opacity="0.72"/>
+    <text x="480" y="138" fill="#E3B341" font-size="13" font-weight="800">OPEN PRS</text>
+    <text x="480" y="176" fill="#F0F6FC" font-size="38" font-weight="900">${metrics.openPrs}</text>
+
+    <rect x="666" y="110" width="185" height="86" rx="12" fill="#271A1A" stroke="#F85149" stroke-opacity="0.68"/>
+    <text x="686" y="138" fill="#FF7B72" font-size="13" font-weight="800">CLOSED NOT MERGED</text>
+    <text x="686" y="176" fill="#F0F6FC" font-size="38" font-weight="900">${closedNotMerged}</text>
+  </g>
+
+  <text x="48" y="218" fill="#C9D1D9" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14">Closed PR merge rate: ${mergeRate}% based on ${metrics.mergedPrs} merged out of ${closedTotal} closed public PRs.</text>
+</svg>
+`;
+}
+
+async function main() {
+  const [mergedPrs, totalPrs, openPrs] = await Promise.all([
+    searchCount(`author:${username} type:pr is:merged`),
+    searchCount(`author:${username} type:pr`),
+    searchCount(`author:${username} type:pr is:open`),
+  ]);
+
+  const svg = renderSvg({ mergedPrs, totalPrs, openPrs });
+  fs.writeFileSync(outputPath, svg, "utf8");
+
+  console.log(`Updated ${path.relative(process.cwd(), outputPath)}`);
+  console.log(`merged=${mergedPrs} total=${totalPrs} open=${openPrs}`);
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
