@@ -65,16 +65,21 @@ Recently active around:
 ## System Metrics & Activity
 
 <p align="center">
+  <a href="https://github.com/search?q=author%3Aaqilaziz+type%3Apr+is%3Amerged&type=pullrequests">
+    <img src="assets/open-source-metrics.svg" alt="Aqil Aziz open source pull request metrics" width="100%" />
+  </a>
+</p>
+
+<p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=aqilaziz&theme=dark&hide_border=true&area=true&bg_color=0D1117" alt="Aqil Aziz GitHub activity graph" width="100%" />
 </p>
 
 <p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=aqilaziz&theme=dark" alt="Aqil Aziz GitHub statistics" width="49%" />
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=aqilaziz&theme=dark&utcOffset=7" alt="Aqil Aziz productive time" width="49%" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=aqilaziz&theme=dark" alt="Aqil Aziz repositories per language" width="49%" />
 </p>
 
 <p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=aqilaziz&theme=dark" alt="Aqil Aziz repositories per language" width="49%" />
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=aqilaziz&theme=dark" alt="Aqil Aziz most committed languages" width="49%" />
 </p>
 
