@@ -62,9 +62,21 @@ Recently active around:
 - Cloud fundamentals across AWS, Google Cloud, and Microsoft Azure
 - DevOps basics, GitHub Actions, and open-source collaboration
 
-## GitHub Activity
+## System Metrics & Activity
 
-<img src="assets/github-activity.svg" alt="Aqil Aziz GitHub activity summary" width="100%" />
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=aqilaziz&theme=dark&hide_border=true&area=true&bg_color=0D1117" alt="Aqil Aziz GitHub activity graph" width="100%" />
+</p>
+
+<p align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=aqilaziz&theme=dark" alt="Aqil Aziz GitHub statistics" width="49%" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=aqilaziz&theme=dark&utcOffset=7" alt="Aqil Aziz productive time" width="49%" />
+</p>
+
+<p align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=aqilaziz&theme=dark" alt="Aqil Aziz repositories per language" width="49%" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=aqilaziz&theme=dark" alt="Aqil Aziz most committed languages" width="49%" />
+</p>
 
 ## Connect
 
