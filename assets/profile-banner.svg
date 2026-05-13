@@ -46,7 +46,7 @@
   </g>
 
   <text x="92" y="126" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="66" font-weight="800">Aqil Aziz</text>
-  <text x="96" y="178" fill="#BAE6FD" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="30" font-weight="600">Educator & AI/full-stack builder</text>
+  <text x="96" y="178" fill="#BAE6FD" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="30" font-weight="600">Educator &amp; AI/full-stack builder</text>
   <text x="96" y="232" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="23">React / Supabase / Python / SQL / Cloud / GenAI</text>
 
   <g font-family="Inter, Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">
