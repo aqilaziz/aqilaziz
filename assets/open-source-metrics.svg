@@ -22,11 +22,11 @@
   <g font-family="Inter, Segoe UI, Arial, sans-serif">
     <rect x="48" y="110" width="185" height="86" rx="12" fill="#0F2A1B" stroke="#3FB950" stroke-opacity="0.72"/>
     <text x="68" y="138" fill="#7EE787" font-size="13" font-weight="800">MERGED PRS</text>
-    <text x="68" y="176" fill="#F0F6FC" font-size="38" font-weight="900">127</text>
+    <text x="68" y="176" fill="#F0F6FC" font-size="38" font-weight="900">128</text>
 
     <rect x="254" y="110" width="185" height="86" rx="12" fill="#0A1F36" stroke="#58A6FF" stroke-opacity="0.72"/>
     <text x="274" y="138" fill="#79C0FF" font-size="13" font-weight="800">TOTAL PRS</text>
-    <text x="274" y="176" fill="#F0F6FC" font-size="38" font-weight="900">352</text>
+    <text x="274" y="176" fill="#F0F6FC" font-size="38" font-weight="900">353</text>
 
     <rect x="460" y="110" width="185" height="86" rx="12" fill="#2B2111" stroke="#D29922" stroke-opacity="0.72"/>
     <text x="480" y="138" fill="#E3B341" font-size="13" font-weight="800">OPEN PRS</text>
@@ -37,5 +37,5 @@
     <text x="686" y="176" fill="#F0F6FC" font-size="38" font-weight="900">89</text>
   </g>
 
-  <text x="48" y="218" fill="#C9D1D9" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14">Closed PR merge rate: 59% based on 127 merged out of 216 closed public PRs.</text>
+  <text x="48" y="218" fill="#C9D1D9" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14">Closed PR merge rate: 59% based on 128 merged out of 217 closed public PRs.</text>
 </svg>
