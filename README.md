@@ -4,6 +4,12 @@
 
 > Educator from East Java, Indonesia — building practical AI, full-stack, and data tools that bring technology into classrooms and communities.
 
+<p align="left">
+  <img src="https://komarev.com/ghpvc/?username=aqilaziz&style=for-the-badge&color=0A66C2&label=Profile+Views" alt="Profile views" />
+  <img src="https://img.shields.io/github/followers/aqilaziz?style=for-the-badge&logo=github&color=181717&label=Followers" alt="GitHub followers" />
+  <img src="https://img.shields.io/badge/Open%20Source-190%2B%20PRs%20merged-2EA043?style=for-the-badge&logo=git&logoColor=white" alt="190+ pull requests merged" />
+</p>
+
 I work at the intersection of **education and applied technology**: AI-assisted learning workflows, automation tools, data projects, and web apps that support schools, communities, and everyday operations.
 
 - 🔭 Currently building AI learning workflows and full-stack apps with React, Next.js & Supabase
