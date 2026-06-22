@@ -30,12 +30,12 @@
 
     <rect x="460" y="110" width="185" height="86" rx="12" fill="#2B2111" stroke="#D29922" stroke-opacity="0.72"/>
     <text x="480" y="138" fill="#E3B341" font-size="13" font-weight="800">OPEN PRS</text>
-    <text x="480" y="176" fill="#F0F6FC" font-size="38" font-weight="900">125</text>
+    <text x="480" y="176" fill="#F0F6FC" font-size="38" font-weight="900">122</text>
 
     <rect x="666" y="110" width="185" height="86" rx="12" fill="#271A1A" stroke="#F85149" stroke-opacity="0.68"/>
     <text x="686" y="138" fill="#FF7B72" font-size="13" font-weight="800">CLOSED NOT MERGED</text>
-    <text x="686" y="176" fill="#F0F6FC" font-size="38" font-weight="900">120</text>
+    <text x="686" y="176" fill="#F0F6FC" font-size="38" font-weight="900">123</text>
   </g>
 
-  <text x="48" y="218" fill="#C9D1D9" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14">Closed PR merge rate: 62% based on 193 merged out of 313 closed public PRs.</text>
+  <text x="48" y="218" fill="#C9D1D9" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14">Closed PR merge rate: 61% based on 193 merged out of 316 closed public PRs.</text>
 </svg>
