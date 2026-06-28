@@ -7,7 +7,7 @@
 <p align="left">
   <img src="https://komarev.com/ghpvc/?username=aqilaziz&style=for-the-badge&color=0A66C2&label=Profile+Views" alt="Profile views" />
   <img src="https://img.shields.io/github/followers/aqilaziz?style=for-the-badge&logo=github&color=181717&label=Followers" alt="GitHub followers" />
-  <img src="https://img.shields.io/badge/Open%20Source-191%20PRs%20merged-2EA043?style=for-the-badge&logo=git&logoColor=white" alt="191 pull requests merged" />
+  <img src="https://img.shields.io/badge/Open%20Source-194%20PRs%20merged-2EA043?style=for-the-badge&logo=git&logoColor=white" alt="194 pull requests merged" />
 </p>
 
 I work at the intersection of **education and applied technology**: AI-assisted learning workflows, automation tools, data projects, and web apps that support schools, communities, and everyday operations.
@@ -55,11 +55,11 @@ I work at the intersection of **education and applied technology**: AI-assisted 
 
 | Project | Focus |
 | --- | --- |
-| [q-build-ai](https://github.com/aqilaziz/q-build-ai) | AI build experiments & project-based learning |
-| [fullstack_nextjs_santrikoding](https://github.com/aqilaziz/fullstack_nextjs_santrikoding) | Full-stack Next.js implementation |
-| [layananlaundry](https://github.com/aqilaziz/layananlaundry) | Laundry service web app (TypeScript) |
-| [ai-english-tutor](https://github.com/aqilaziz/ai-english-tutor) | AI-based spoken English practice |
-| [browsertrace](https://github.com/aqilaziz/browsertrace) | Browser-agent debugging & Playwright workflows |
+| [beasiswacoach-ai](https://github.com/aqilaziz/beasiswacoach-ai) | 🎓 AI scholarship coach for Indonesian students |
+| [buildaimamsaka](https://github.com/aqilaziz/buildaimamsaka) | 🏗️ Student portfolio platform — Next.js 15 + Supabase |
+| [geraicerdas-ai](https://github.com/aqilaziz/geraicerdas-ai) | 🤖 AI business copilot for Indonesian MSMEs |
+| [gitmark](https://github.com/aqilaziz/gitmark) | 📌 GitHub link organizer & bookmark manager |
+| [ZizkaDB](https://github.com/aqilaziz/ZizkaDB) | 🗄️ Operational database for AI agents (contributor) |
 
 ## 📊 GitHub Stats
 
