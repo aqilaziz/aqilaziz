@@ -39,6 +39,43 @@ async function searchCount(query) {
   return Number(data.total_count || 0);
 }
 
+async function countDistinctRepos(query) {
+  const headers = {
+    Accept: "application/vnd.github+json",
+    "User-Agent": `${username}-profile-metrics`,
+    "X-GitHub-Api-Version": "2022-11-28",
+  };
+  if (token) {
+    headers.Authorization = `Bearer ${token}`;
+  }
+
+  const repos = new Set();
+  // GitHub search caps results at 1000 (10 pages x 100/page); that's far
+  // more than enough to get an accurate distinct-repo count for a profile
+  // metrics widget, and avoids an unbounded number of API calls.
+  for (let page = 1; page <= 10; page += 1) {
+    const url = new URL("https://api.github.com/search/issues");
+    url.searchParams.set("q", query);
+    url.searchParams.set("per_page", "100");
+    url.searchParams.set("page", String(page));
+
+    const response = await fetch(url, { headers });
+    if (!response.ok) {
+      const body = await response.text();
+      throw new Error(`GitHub API failed for "${query}" (page ${page}): ${response.status} ${body}`);
+    }
+
+    const data = await response.json();
+    const items = data.items || [];
+    for (const item of items) {
+      repos.add(item.repository_url);
+    }
+    if (items.length < 100) break;
+  }
+
+  return repos.size;
+}
+
 function formatJakartaDate(date = new Date()) {
   return new Intl.DateTimeFormat("en-GB", {
     day: "numeric",
@@ -49,14 +86,11 @@ function formatJakartaDate(date = new Date()) {
 }
 
 function renderSvg(metrics) {
-  const closedTotal = Math.max(metrics.totalPrs - metrics.openPrs, 0);
-  const closedNotMerged = Math.max(closedTotal - metrics.mergedPrs, 0);
-  const mergeRate = closedTotal > 0 ? Math.round((metrics.mergedPrs / closedTotal) * 100) : 0;
   const updatedAt = formatJakartaDate();
 
   return `<svg width="900" height="250" viewBox="0 0 900 250" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">Aqil Aziz open source pull request metrics</title>
-  <desc id="desc">Public GitHub pull request metrics for Aqil Aziz showing merged, total, open, and closed pull requests.</desc>
+  <desc id="desc">Public GitHub pull request metrics for Aqil Aziz showing merged PRs, total PRs, open PRs, and repos contributed to.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="900" y2="250" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#0D1117"/>
@@ -88,28 +122,29 @@ function renderSvg(metrics) {
     <text x="480" y="138" fill="#E3B341" font-size="13" font-weight="800">OPEN PRS</text>
     <text x="480" y="176" fill="#F0F6FC" font-size="38" font-weight="900">${metrics.openPrs}</text>
 
-    <rect x="666" y="110" width="185" height="86" rx="12" fill="#271A1A" stroke="#F85149" stroke-opacity="0.68"/>
-    <text x="686" y="138" fill="#FF7B72" font-size="13" font-weight="800">CLOSED NOT MERGED</text>
-    <text x="686" y="176" fill="#F0F6FC" font-size="38" font-weight="900">${closedNotMerged}</text>
+    <rect x="666" y="110" width="185" height="86" rx="12" fill="#1A1330" stroke="#A371F7" stroke-opacity="0.72"/>
+    <text x="686" y="138" fill="#D2A8FF" font-size="13" font-weight="800">REPOS CONTRIBUTED</text>
+    <text x="686" y="176" fill="#F0F6FC" font-size="38" font-weight="900">${metrics.reposContributed}+</text>
   </g>
 
-  <text x="48" y="218" fill="#C9D1D9" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14">Closed PR merge rate: ${mergeRate}% based on ${metrics.mergedPrs} merged out of ${closedTotal} closed public PRs.</text>
+  <text x="48" y="218" fill="#C9D1D9" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14">${metrics.mergedPrs} pull requests merged across ${metrics.reposContributed}+ public repositories.</text>
 </svg>
 `;
 }
 
 async function main() {
-  const [mergedPrs, totalPrs, openPrs] = await Promise.all([
+  const [mergedPrs, totalPrs, openPrs, reposContributed] = await Promise.all([
     searchCount(`author:${username} type:pr is:merged`),
     searchCount(`author:${username} type:pr`),
     searchCount(`author:${username} type:pr is:open`),
+    countDistinctRepos(`author:${username} type:pr is:merged`),
   ]);
 
-  const svg = renderSvg({ mergedPrs, totalPrs, openPrs });
+  const svg = renderSvg({ mergedPrs, totalPrs, openPrs, reposContributed });
   fs.writeFileSync(outputPath, svg, "utf8");
 
   console.log(`Updated ${path.relative(process.cwd(), outputPath)}`);
-  console.log(`merged=${mergedPrs} total=${totalPrs} open=${openPrs}`);
+  console.log(`merged=${mergedPrs} total=${totalPrs} open=${openPrs} reposContributed=${reposContributed}`);
 }
 
 main().catch((error) => {

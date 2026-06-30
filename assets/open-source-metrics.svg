@@ -1,6 +1,6 @@
 <svg width="900" height="250" viewBox="0 0 900 250" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">Aqil Aziz open source pull request metrics</title>
-  <desc id="desc">Public GitHub pull request metrics for Aqil Aziz showing merged, total, open, and closed pull requests.</desc>
+  <desc id="desc">Public GitHub pull request metrics for Aqil Aziz showing merged PRs, total PRs, open PRs, and repos contributed to.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="900" y2="250" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#0D1117"/>
@@ -26,16 +26,16 @@
 
     <rect x="254" y="110" width="185" height="86" rx="12" fill="#0A1F36" stroke="#58A6FF" stroke-opacity="0.72"/>
     <text x="274" y="138" fill="#79C0FF" font-size="13" font-weight="800">TOTAL PRS</text>
-    <text x="274" y="176" fill="#F0F6FC" font-size="38" font-weight="900">446</text>
+    <text x="274" y="176" fill="#F0F6FC" font-size="38" font-weight="900">447</text>
 
     <rect x="460" y="110" width="185" height="86" rx="12" fill="#2B2111" stroke="#D29922" stroke-opacity="0.72"/>
     <text x="480" y="138" fill="#E3B341" font-size="13" font-weight="800">OPEN PRS</text>
-    <text x="480" y="176" fill="#F0F6FC" font-size="38" font-weight="900">7</text>
+    <text x="480" y="176" fill="#F0F6FC" font-size="38" font-weight="900">6</text>
 
-    <rect x="666" y="110" width="185" height="86" rx="12" fill="#271A1A" stroke="#F85149" stroke-opacity="0.68"/>
-    <text x="686" y="138" fill="#FF7B72" font-size="13" font-weight="800">CLOSED NOT MERGED</text>
-    <text x="686" y="176" fill="#F0F6FC" font-size="38" font-weight="900">243</text>
+    <rect x="666" y="110" width="185" height="86" rx="12" fill="#1A1330" stroke="#A371F7" stroke-opacity="0.72"/>
+    <text x="686" y="138" fill="#D2A8FF" font-size="13" font-weight="800">REPOS CONTRIBUTED</text>
+    <text x="686" y="176" fill="#F0F6FC" font-size="38" font-weight="900">86+</text>
   </g>
 
-  <text x="48" y="218" fill="#C9D1D9" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14">Closed PR merge rate: 45% based on 196 merged out of 439 closed public PRs.</text>
+  <text x="48" y="218" fill="#C9D1D9" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14">196 pull requests merged across 86+ public repositories.</text>
 </svg>
