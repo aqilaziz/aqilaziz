@@ -16,7 +16,7 @@
 
 ## About
 
-- 🤖 Contribute to open-source AI agent infrastructure — [ZizkaDB](https://github.com/Zizka-ai/ZizkaDB), [openclaw](https://github.com/openclaw/openclaw)
+- 🤖 Contribute to open-source AI agent infrastructure — [ZizkaDB](https://github.com/Zizka-ai/ZizkaDB), [openclaw](https://github.com/openclaw/openclaw), [openhuman](https://github.com/tinyhumansai/openhuman)
 - 💻 Build full-stack apps with Next.js, TypeScript, Supabase, PostgreSQL
 - 🎓 Educator at MAM 1 Paciran Lamongan — teaching digital literacy and software engineering
 - 🌏 Focused on AI tools for Indonesian education and student communities
@@ -25,7 +25,8 @@
 
 | Project | What I shipped |
 |---------|-----------------|
-| [Zizka-ai/ZizkaDB](https://github.com/Zizka-ai/ZizkaDB) | SQL bug fixes, LangChain callback handlers, memory leak fix, 44 new tests — **2 PRs merged** |
+| [Zizka-ai/ZizkaDB](https://github.com/Zizka-ai/ZizkaDB) | SQL bug fixes, LangChain callback handlers, security hardening, 60+ new tests — **3 PRs merged** |
+| [tinyhumansai/openhuman](https://github.com/tinyhumansai/openhuman) | Docker/installer fixes, error classification, Indonesian i18n polish — **57+ PRs merged** |
 | [openclaw/openclaw](https://github.com/openclaw/openclaw) | Indonesian i18n (88 strings), read-tool image delivery, cross-platform test fixes |
 
 ## Featured projects
@@ -80,3 +81,4 @@ Tooling     GitHub Actions · Docker
 </p>
 
 <p align="center"><i>Open to collaboration on AI agent tooling, Indonesian localization, and education-focused tech.</i></p>
+
