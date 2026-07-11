@@ -26,11 +26,11 @@
 
     <rect x="254" y="110" width="185" height="86" rx="12" fill="#0A1F36" stroke="#58A6FF" stroke-opacity="0.72"/>
     <text x="274" y="138" fill="#79C0FF" font-size="13" font-weight="800">TOTAL PRS</text>
-    <text x="274" y="176" fill="#F0F6FC" font-size="38" font-weight="900">448</text>
+    <text x="274" y="176" fill="#F0F6FC" font-size="38" font-weight="900">450</text>
 
     <rect x="460" y="110" width="185" height="86" rx="12" fill="#2B2111" stroke="#D29922" stroke-opacity="0.72"/>
     <text x="480" y="138" fill="#E3B341" font-size="13" font-weight="800">OPEN PRS</text>
-    <text x="480" y="176" fill="#F0F6FC" font-size="38" font-weight="900">11</text>
+    <text x="480" y="176" fill="#F0F6FC" font-size="38" font-weight="900">13</text>
 
     <rect x="666" y="110" width="185" height="86" rx="12" fill="#1A1330" stroke="#A371F7" stroke-opacity="0.72"/>
     <text x="686" y="138" fill="#D2A8FF" font-size="13" font-weight="800">REPOS CONTRIBUTED</text>
