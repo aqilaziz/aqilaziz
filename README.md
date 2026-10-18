@@ -2,13 +2,15 @@
 
 <div align="center">
 
-### AI Agent Tooling · Full-Stack Developer · Educator
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=800&color=6366F1&center=true&vCenter=true&width=600&lines=AI+Agent+Tooling;Full-Stack+Developer+%28Next.js+%2F+Supabase%29;Educator+%40+MAM+1+Paciran+Lamongan" alt="Typing animation" />
 
 **Building practical AI systems, developer tools, and education technology — based in East Java, Indonesia 🇮🇩**
 
 <img src="https://komarev.com/ghpvc/?username=aqilaziz&style=for-the-badge&color=6366f1" />
 <img src="https://img.shields.io/github/followers/aqilaziz?style=for-the-badge&color=6366f1" />
 <img src="https://img.shields.io/badge/Open%20to-Collaboration-6366f1?style=for-the-badge" />
+
+<img src="https://skillicons.dev/icons?i=ts,js,python,react,nextjs,tailwind,supabase,postgres,fastapi,nodejs,docker,git,githubactions,vscode&theme=dark" alt="Tech stack icons" />
 
 </div>
 
@@ -64,11 +66,22 @@ Tooling     GitHub Actions · Docker
 </p>
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=aqilaziz&theme=tokyonight&hide_border=true&background=0D1117&ring=6366f1&fire=6366f1&currStreakLabel=6366f1" width="60%" />
+  <img src="https://raw.githubusercontent.com/aqilaziz/aqilaziz/output/github-contribution-grid-snake.svg" alt="Snake eating contributions" width="100%" />
+</p>
+
+## ✨ Highlights
+
+<p align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=aqilaziz&theme=tokyonight" height="165" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=aqilaziz&theme=tokyonight" height="165" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=aqilaziz&theme=react-dark&hide_border=true&area=true&bg_color=0D1117&color=6366f1&line=6366f1&point=ffffff" width="100%" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=6366f1&height=120&section=footer" width="100%" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=aqilaziz&theme=tokyonight&hide_border=true&background=0D1117&ring=6366f1&fire=6366f1&currStreakLabel=6366f1" width="60%" />
 </p>
 
 ---
