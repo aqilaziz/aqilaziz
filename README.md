@@ -6,8 +6,8 @@
 
 **Building practical AI systems, developer tools, and education technology — based in East Java, Indonesia 🇮🇩**
 
-<img src="https://komarev.com/ghpvc/?username=aqilaziz&style=for-the-badge&color=6366f1" />
-<img src="https://img.shields.io/github/followers/aqilaziz?style=for-the-badge&color=6366f1" />
+<img src="https://komarev.com/ghpvc/?username=aqilaziz&style=for-the-badge&color=6366f1&v=2" />
+<img src="https://img.shields.io/github/followers/aqilaziz?style=for-the-badge&logo=github&logoColor=white&labelColor=555&color=6366f1" />
 <img src="https://img.shields.io/badge/Open%20to-Collaboration-6366f1?style=for-the-badge" />
 
 <img src="https://skillicons.dev/icons?i=ts,js,python,react,nextjs,tailwind,supabase,postgres,fastapi,nodejs,docker,git,githubactions,vscode&theme=dark" alt="Tech stack icons" />
